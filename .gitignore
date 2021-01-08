@@ -6,7 +6,7 @@ __pycache__/
 accitc.pem
 # C extensions
 *.so
-
+accitc-django.pem
 # Distribution / packaging
 .Python
 build/
