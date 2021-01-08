@@ -112,7 +112,7 @@ const loadingButtonHtml = `<div class="lds-dual-ring"></div>`;
 const formSendButtonOnClick = () => {
     formButton.innerHTML = loadingButtonHtml;
     formButton.disabled = true;
-    const response = postData('http://127.0.0.1:8000/api/message/', {
+    const response = postData('https://accitclub.ml/api/message/', {
         'name':inputName.value,
         'email':inputEmail.value,
         'message':inputMessage.value
