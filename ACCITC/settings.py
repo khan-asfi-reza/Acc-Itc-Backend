@@ -134,13 +134,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Frontend/Static/')
 ]
 
 STATIC_URL = 'Frontend/Static/'
+
+if PRODUCTION == 'True':
+    MEDIAFILES_LOCATION = 'Media'
+    STATICFILES_LOCATION = 'Static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'Static')
+    ]
+
+    STATIC_URL = '/Static/'
+MEDIA_URL = '/Media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'Frontend/Static_Root')
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', "")
@@ -149,11 +159,6 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', "")
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-if PRODUCTION == 'True':
-    MEDIAFILES_LOCATION = 'Media'
-    STATICFILES_LOCATION = 'Static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
