@@ -1,3 +1,4 @@
+from django.shortcuts import render, HttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -8,6 +9,10 @@ from Main.models import ResponseMessage, PanelMember
 # Handles Message Response
 from Main.pagination import GeneralPagination
 from Main.serializers import PanelMemberSerializer
+
+
+def home_view(request):
+    return HttpResponse(request, "<h1>Hello World</h1>")
 
 
 @api_view(['POST'])
