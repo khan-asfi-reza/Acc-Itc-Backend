@@ -1,204 +1,203 @@
-{#{% extends 'components/base.html' %}#}
-{#{% load static %}#}
-{##}
-{#{% block styles %}#}
-{#    <link href="{% static 'css/home.css' %}" rel="stylesheet">#}
-{#{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#<header class="header">#}
-{#    <div class="header-carousel">#}
-{#        <video autoplay muted loop id="myVideo">#}
-{#            <source src="{% static "img/video.mp4" %}" type="video/mp4">#}
-{#        </video>#}
-{##}
-{#        <div class="mask"></div>#}
-{#        <div class="header-text">#}
-{#            <h1 class="type-writer">Adamjee Cantonment College IT Club</h1>#}
-{#            <p>The Club Everyone Cherishes For</p>#}
-{#            <button id="learn_more">#}
-{#                <span>Learn More</span>#}
-{#                <svg width="13px" height="10px">#}
-{#                    <path d="M1,5 L11,5"></path>#}
-{#                    <polyline points="8 1 12 5 8 9"></polyline>#}
-{#                </svg>#}
-{#            </button>#}
-{#        </div>#}
-{#    </div>#}
-{#</header>#}
-{##}
-{#<section id="introduction" class="introduction container">#}
-{##}
-{#    <div id="introduction_header" class="section-header">#}
-{#        <h2>Introduction</h2>#}
-{#        <p>Learn more about Adamjee Cantonment College and IT club</p>#}
-{#    </div>#}
-{##}
-{#    <div class="row">#}
-{#        <div class="introduction-club text-box flex-1 display-flex column-flex justify-center align-item-center">#}
-{#            <div>#}
-{#                <h3>Our Club</h3>#}
-{#                <p>"ACC IT CLUB" is a student body that inspire and empower students of Adamjee Cantonment College to be involved in IT related tasks and knowledge sharing. This also applies to expand their knowledge about Information and Technology. This club will also have been organizing many IT related events in Adamjee Cantonment College and has participated to different IT related programs to other institutions for expressing these motives more clearly and also imparting inspiration and knowledge along with potential of IT. It will also make use of the potential Adamjee Cantonment College students have in IT related fields. Our Passive task will also be to help other clubs in IT related tasks.</p>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="image-slider flex-1" id="wbn-slider">#}
-{#            <div class="wbn-slide">#}
-{#                <img src="{% static "img/image1.jpg" %}" alt="Images"/>#}
-{#            </div>#}
-{#            <div class="active wbn-slide">#}
-{#                <img src="{% static "img/image2.jpg" %}" alt="Images"/>#}
-{#            </div>#}
-{#            <div class="wbn-slide">#}
-{#                <img src="{% static "img/image3.jpg" %}" alt="Images"/>#}
-{#            </div>#}
-{#            <div class="wbn-slide">#}
-{#                <img src="{% static "img/image4.jpg" %}" alt="Images"/>#}
-{#            </div>#}
-{#            <div class="wbn-slide">#}
-{#                <img src="{% static "img/image5.jpg" %}" alt="Images"/>#}
-{#            </div>#}
-{#            <!--            <div class="wbn-buttons">-->#}
-{#            <!--                <div class="wbn-slider-back-btn">-->#}
-{#            <!--                    <span>◀</span>-->#}
-{#            <!--                </div>-->#}
-{##}
-{#            <!--                <div class="wbn-slider-next-btn">-->#}
-{#            <!--                    <span>▶</span>-->#}
-{#            <!--                </div>-->#}
-{#            <!--            </div>-->#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{#<section id="sector" class="sectors">#}
-{#    <div id="sector_header" class="section-header">#}
-{#        <h2>Sectors</h2>#}
-{#        <p>Learn more about Adamjee Cantonment College and IT Club</p>#}
-{#    </div>#}
-{#    <div class="row">#}
-{#        <div class="card">#}
-{#            <div class="card-logo-container"><img class="card-logo" src="{% static "img/code.svg" %}" alt="Coding"></div>#}
-{#            <h4>Programming</h4>#}
-{#            <p>Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result. Programming involves tasks such as: analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language</p>#}
-{#        </div>#}
-{#        <div class="card">#}
-{#            <div class="card-logo-container"><img class="card-logo" src="{% static "img/web-development.svg" %}" alt="Coding"></div>#}
-{#            <h4>Web Development</h4>#}
-{#            <p>Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network).Web development can range from developing a simple single static page of plain text to complex web-based internet applications#}
-{#            </p>#}
-{#        </div>#}
-{#        <div class="card">#}
-{#            <div class="card-logo-container"><img class="card-logo" src="{% static "img/computer.svg" %}" alt="Coding"></div>#}
-{#            <h4>Design</h4>#}
-{#            <p>Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users’ specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience.</p>#}
-{#        </div>#}
-{#        <div class="card">#}
-{#            <div class="card-logo-container"><img class="card-logo" src="{% static "img/console.svg" %}" alt="Coding"></div>#}
-{#            <h4>Gaming</h4>#}
-{#            <p>Video games are interactive, highly entertaining computer programs that people use for leisure. As video games become more sophisticated and interactive, more and more people are able to play them on a variety of devices, including mobile phones.Gaming team in Adamjee Cantonment College is slightly different from others.</p>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{#<section id="our_team" class="our-team">#}
-{#    <div id="our_team_header" class="section-header">#}
-{#        <h2>Our Team</h2>#}
-{#        <p>Learn more about Adamjee Cantonment College and IT Club</p>#}
-{#    </div>#}
-{#    <div class="row">#}
-{#        <div class="section-box flex-1 text-center">#}
-{#            <p>Our Team consists of a Moderator, Adviser and Technology Enthusiast students. A portion of skilled students form the panel consisting of 50 members. The club consists more than 500 General Members from each batch. The club runs through the particiaption of both panel and general members. </p>#}
-{#            <div class="button-box row justify-center align-item-center">#}
-{#                <button class="button up">#}
-{#                    Join Now#}
-{#                </button>#}
-{#                <button class="button slide">#}
-{#                    Our Members#}
-{#                </button>#}
-{#            </div>#}
-{#            <div id="number_counter" class="number-row">#}
-{#                <p id="member">+500 <br>Member</p>#}
-{#                <p id="exec">+50 <br> Executive</p>#}
-{#                <p id="event">+25 <br> Events</p>#}
-{#                <p id="workshop">+75 <br> Workshops</p>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{#<section id="event_section" class="events container">#}
-{#    <div id="event_header" class="section-header">#}
-{#        <h2>Events</h2>#}
-{#        <p>Events and workshop by ACCITC</p>#}
-{#    </div>#}
-{#    <div class="row">#}
-{#        <div class="img-box flex-1 display-flex column-flex justify-center align-item-center">#}
-{#            <img class="test" src="{% static "img/image1.jpg" %}" alt="Image">#}
-{#            <img class="test" src="{% static "img/image2.jpg" %}" alt="Image">#}
-{#            <img class="test" src="{% static "img/image3.jpg" %}" alt="Image">#}
-{#            <img class="test" src="{% static "img/image4.jpg" %}" alt="Image">#}
-{#            <img class="test" src="{% static "img/image5.jpg" %}" alt="Image">#}
-{#        </div>#}
-{#        <div class="mobile-margin section-box flex-1 display-flex column-flex justify-center align-item-center">#}
-{#            <p>Our club arrange different kinds of events and workshops. Every year many tech enthusiasts around the country join these exciting events. Our workshops help students to learn about information technology.</p>#}
-{#            <button class="btn">Learn More</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{##}
-{#<section id="contact_us" class="contact-us">#}
-{#    <div class="form-div">#}
-{#        <div class="section-header">#}
-{#            <h2>Contact Us</h2>#}
-{#        </div>#}
-{#        <div class="body">#}
-{#            <div id="form">#}
-{#                <form autocomplete="off" id="form_" class="form-class" method="post" action="">#}
-{#                    {% csrf_token %}#}
-{#                    <div class="form-heading">#}
-{#                        <h3>Send us your response</h3>#}
-{#                        <p>Feel Free To Leave Us A Message</p>#}
-{#                    </div>#}
-{#                    <div class="form-input">#}
-{#                        <input class="input" autocomplete="off" type="text" id="name" name="Name" required>#}
-{#                        <label for="name" class="label-name">#}
-{#                            <span class="content-name">Name</span>#}
-{#                        </label>#}
-{#                    </div>#}
-{#                    <div class="form-input">#}
-{#                        <input class="input" autocomplete="off" type="text" id="email" name="email" required>#}
-{#                        <label for="email" class="label-name">#}
-{#                            <span class="content-name">Email</span>#}
-{#                        </label>#}
-{#                    </div>#}
-{#                    <div class="form-input">#}
-{#                        <textarea class="input" id="message" name="message" required></textarea>#}
-{#                        <label for="Name" class="label-name">#}
-{#                            <span class="content-name">Message</span>#}
-{#                        </label>#}
-{#                    </div>#}
-{##}
-{#                    <div class="button-container-1">#}
-{#                        <button id='work' type="button" name="Hover">#}
-{#                            Send#}
-{#                        </button>#}
-{#                    </div>#}
-{#                </form>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{#{% endblock %}#}
-{##}
-{#{% block scripts%}#}
-{#<script src="{% static 'js/scroll.js' %}"></script>#}
-{#<script src="{% static 'js/imageTransition.js' %}"></script>#}
-{#<script src="{% static 'js/typeWriter.js' %}"></script>#}
-{#<script src="{% static 'js/home/api.js' %}"></script>#}
-{#<script src="{% static 'js/home/home.js' %}"></script>#}
-{#{% endblock %}#}
-{##}
-{##}
-{##}
-<h1>Test</h1>
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<header class="header">
+    <div class="header-carousel">
+        <video autoplay muted loop id="myVideo">
+            <source src="{% static "img/video.mp4" %}" type="video/mp4">
+        </video>
+
+        <div class="mask"></div>
+        <div class="header-text">
+            <h1 class="type-writer">Adamjee Cantonment College IT Club</h1>
+            <p>The Club Everyone Cherishes For</p>
+            <button id="learn_more">
+                <span>Learn More</span>
+                <svg width="13px" height="10px">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<section id="introduction" class="introduction container">
+
+    <div id="introduction_header" class="section-header">
+        <h2>Introduction</h2>
+        <p>Learn more about Adamjee Cantonment College and IT club</p>
+    </div>
+
+    <div class="row">
+        <div class="introduction-club text-box flex-1 display-flex column-flex justify-center align-item-center">
+            <div>
+                <h3>Our Club</h3>
+                <p>"ACC IT CLUB" is a student body that inspire and empower students of Adamjee Cantonment College to be involved in IT related tasks and knowledge sharing. This also applies to expand their knowledge about Information and Technology. This club will also have been organizing many IT related events in Adamjee Cantonment College and has participated to different IT related programs to other institutions for expressing these motives more clearly and also imparting inspiration and knowledge along with potential of IT. It will also make use of the potential Adamjee Cantonment College students have in IT related fields. Our Passive task will also be to help other clubs in IT related tasks.</p>
+            </div>
+        </div>
+        <div class="image-slider flex-1" id="wbn-slider">
+            <div class="wbn-slide">
+                <img src="{% static "img/image1.jpg" %}" alt="Images"/>
+            </div>
+            <div class="active wbn-slide">
+                <img src="{% static "img/image2.jpg" %}" alt="Images"/>
+            </div>
+            <div class="wbn-slide">
+                <img src="{% static "img/image3.jpg" %}" alt="Images"/>
+            </div>
+            <div class="wbn-slide">
+                <img src="{% static "img/image4.jpg" %}" alt="Images"/>
+            </div>
+            <div class="wbn-slide">
+                <img src="{% static "img/image5.jpg" %}" alt="Images"/>
+            </div>
+            <!--            <div class="wbn-buttons">-->
+            <!--                <div class="wbn-slider-back-btn">-->
+            <!--                    <span>◀</span>-->
+            <!--                </div>-->
+
+            <!--                <div class="wbn-slider-next-btn">-->
+            <!--                    <span>▶</span>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</section>
+
+<section id="sector" class="sectors">
+    <div id="sector_header" class="section-header">
+        <h2>Sectors</h2>
+        <p>Learn more about Adamjee Cantonment College and IT Club</p>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-logo-container"><img class="card-logo" src="{% static "img/code.svg" %}" alt="Coding"></div>
+            <h4>Programming</h4>
+            <p>Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result. Programming involves tasks such as: analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language</p>
+        </div>
+        <div class="card">
+            <div class="card-logo-container"><img class="card-logo" src="{% static "img/web-development.svg" %}" alt="Coding"></div>
+            <h4>Web Development</h4>
+            <p>Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network).Web development can range from developing a simple single static page of plain text to complex web-based internet applications
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-logo-container"><img class="card-logo" src="{% static "img/computer.svg" %}" alt="Coding"></div>
+            <h4>Design</h4>
+            <p>Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users’ specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience.</p>
+        </div>
+        <div class="card">
+            <div class="card-logo-container"><img class="card-logo" src="{% static "img/console.svg" %}" alt="Coding"></div>
+            <h4>Gaming</h4>
+            <p>Video games are interactive, highly entertaining computer programs that people use for leisure. As video games become more sophisticated and interactive, more and more people are able to play them on a variety of devices, including mobile phones.Gaming team in Adamjee Cantonment College is slightly different from others.</p>
+        </div>
+    </div>
+</section>
+
+<section id="our_team" class="our-team">
+    <div id="our_team_header" class="section-header">
+        <h2>Our Team</h2>
+        <p>Learn more about Adamjee Cantonment College and IT Club</p>
+    </div>
+    <div class="row">
+        <div class="section-box flex-1 text-center">
+            <p>Our Team consists of a Moderator, Adviser and Technology Enthusiast students. A portion of skilled students form the panel consisting of 50 members. The club consists more than 500 General Members from each batch. The club runs through the particiaption of both panel and general members. </p>
+            <div class="button-box row justify-center align-item-center">
+                <button class="button up">
+                    Join Now
+                </button>
+                <button class="button slide">
+                    Our Members
+                </button>
+            </div>
+            <div id="number_counter" class="number-row">
+                <p id="member">+500 <br>Member</p>
+                <p id="exec">+50 <br> Executive</p>
+                <p id="event">+25 <br> Events</p>
+                <p id="workshop">+75 <br> Workshops</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="event_section" class="events container">
+    <div id="event_header" class="section-header">
+        <h2>Events</h2>
+        <p>Events and workshop by ACCITC</p>
+    </div>
+    <div class="row">
+        <div class="img-box flex-1 display-flex column-flex justify-center align-item-center">
+            <img class="test" src="{% static "img/image1.jpg" %}" alt="Image">
+            <img class="test" src="{% static "img/image2.jpg" %}" alt="Image">
+            <img class="test" src="{% static "img/image3.jpg" %}" alt="Image">
+            <img class="test" src="{% static "img/image4.jpg" %}" alt="Image">
+            <img class="test" src="{% static "img/image5.jpg" %}" alt="Image">
+        </div>
+        <div class="mobile-margin section-box flex-1 display-flex column-flex justify-center align-item-center">
+            <p>Our club arrange different kinds of events and workshops. Every year many tech enthusiasts around the country join these exciting events. Our workshops help students to learn about information technology.</p>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact_us" class="contact-us">
+    <div class="form-div">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="body">
+            <div id="form">
+                <form autocomplete="off" id="form_" class="form-class" method="post" action="">
+                    {% csrf_token %}
+                    <div class="form-heading">
+                        <h3>Send us your response</h3>
+                        <p>Feel Free To Leave Us A Message</p>
+                    </div>
+                    <div class="form-input">
+                        <input class="input" autocomplete="off" type="text" id="name" name="Name" required>
+                        <label for="name" class="label-name">
+                            <span class="content-name">Name</span>
+                        </label>
+                    </div>
+                    <div class="form-input">
+                        <input class="input" autocomplete="off" type="text" id="email" name="email" required>
+                        <label for="email" class="label-name">
+                            <span class="content-name">Email</span>
+                        </label>
+                    </div>
+                    <div class="form-input">
+                        <textarea class="input" id="message" name="message" required></textarea>
+                        <label for="Name" class="label-name">
+                            <span class="content-name">Message</span>
+                        </label>
+                    </div>
+
+                    <div class="button-container-1">
+                        <button id='work' type="button" name="Hover">
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts%}
+<script src="{% static 'js/scroll.js' %}"></script>
+<script src="{% static 'js/imageTransition.js' %}"></script>
+<script src="{% static 'js/typeWriter.js' %}"></script>
+<script src="{% static 'js/home/api.js' %}"></script>
+<script src="{% static 'js/home/home.js' %}"></script>
+{% endblock %}
+
+
+
