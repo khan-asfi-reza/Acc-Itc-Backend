@@ -137,7 +137,7 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Frontend/Static/')
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'Frontend/Static_Root')
 STATIC_URL = 'Frontend/Static/'
 
 if PRODUCTION == 'True':
@@ -145,13 +145,9 @@ if PRODUCTION == 'True':
     STATICFILES_LOCATION = 'Static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'Static')
-    ]
-
     STATIC_URL = '/Static/'
 MEDIA_URL = '/Media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'Frontend/Static_Root')
+
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', "")
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', "")
