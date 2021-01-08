@@ -32,7 +32,7 @@ DATABASE_PORT = os.environ.get("DATABASE_PORT", "POST")
 DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD", "PASSWORD")
 # SECURITY WARNING: don't run with debug turned on in production!
 PRODUCTION = os.environ.get('PRODUCTION', 'False')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 # Application definition
