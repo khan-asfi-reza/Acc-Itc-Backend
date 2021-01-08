@@ -12,7 +12,7 @@ from Main.serializers import PanelMemberSerializer
 
 
 def home_view(request):
-    return HttpResponse(request, "<h1>Hello World</h1>")
+    return render(request, "index.html")
 
 
 @api_view(['POST'])

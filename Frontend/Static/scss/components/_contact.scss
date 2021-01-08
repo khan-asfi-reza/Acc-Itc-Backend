@@ -1,0 +1,175 @@
+@import "../const";
+@import "../util";
+
+.contact-us {
+  .form-div {
+    background-color: $theme-secondary-color;
+    padding: 20px 0;
+    .body {
+      width: 50%;
+      margin: 20px auto;
+      background-color: $text-header-color;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      form {
+        padding: 5% 10%;
+        .form-heading {
+          text-align: center;
+          margin: 10% 0;
+        }
+
+        .form-input {
+          position: relative;
+          overflow: hidden;
+          margin: 5% 0;
+
+          .input {
+            border: none;
+            padding-top: 3rem;
+            width: 100%;
+            outline: none;
+            color: grey;
+            font-size: 1.2rem;
+
+          }
+
+          .input:focus + .label-name .content-name, .input:valid + .label-name .content-name {
+            transform: translateY(-150%);
+          }
+
+          .input:focus + .label-name::after, .input:valid + .label-name::after {
+            transform: translateY(0);
+          }
+
+          label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            border-bottom: 1px solid darkgray;
+
+            &::after {
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              border-bottom: 2px solid $theme-secondary-color;
+              left: 0;
+              bottom: -1px;
+              transform: translate(-100%);
+              transition: transform 0.2s ease;
+            }
+
+            .content-name {
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              transition: all 0.4s ease;
+            }
+          }
+
+          textarea {
+            resize: none;
+          }
+
+          textarea:focus + .label-name .content-name, textarea:valid + .label-name .content-name {
+            transform: translateY(150%) !important;
+          }
+
+          textarea::-webkit-scrollbar {
+            width: 3px;
+          }
+
+
+          /* Track */
+          textarea::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 1px;
+          }
+
+          /* Handle */
+          textarea::-webkit-scrollbar-thumb {
+            background: $theme-primary-color;
+            border-radius: 1px;
+          }
+
+          /* Handle on hover */
+          textarea::-webkit-scrollbar-thumb:hover {
+            background: #0e0d0d;
+          }
+
+        }
+        //Button
+        .button-container-1 {
+          position: relative;
+          width: 100px;
+          height: 50px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 6vh;
+          overflow: hidden;
+          font-weight: 300;
+          font-size: 20px;
+          transition: 0.5s;
+          letter-spacing: 1px;
+          border-radius: 8px;
+          button {
+            width: 101%;
+            height: 100%;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: $theme-primary-color;
+            color: $text-secondary-color;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: all 0.5s ease-in;
+            &:hover {
+              background: $text-secondary-color;
+              color:  $theme-primary-color;
+              border: 1px solid $theme-primary-color;
+            }
+            &:disabled{
+              pointer-events: none;
+            }
+          }
+        }
+        a{
+          color:#00ff95;
+        }
+        //End
+      }
+    }
+  }
+}
+
+@include small-tab{
+  .contact-us{
+    .form-div{
+      .body{
+        width: 70%;
+      }
+    }
+  }
+}
+
+@include large-phone{
+  .contact-us{
+    .form-div{
+      .body{
+        width: 90%;
+        form{
+          padding: 10%;
+        }
+      }
+    }
+  }
+}

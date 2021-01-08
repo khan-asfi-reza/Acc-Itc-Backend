@@ -17,7 +17,7 @@ load_dotenv()
 load_dotenv(verbose=True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -31,7 +31,8 @@ DATABASE_USER = os.environ.get("DATABASE_USER", "USER")
 DATABASE_PORT = os.environ.get("DATABASE_PORT", "POST")
 DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD", "PASSWORD")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+PRODUCTION = os.environ.get('PRODUCTION', 'False')
+DEBUG = PRODUCTION == 'False'
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -69,7 +70,7 @@ ROOT_URLCONF = 'ACCITC.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'Frontend/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,13 +135,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/Static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'Static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
-MEDIA_URL = f"/Media/"
 
-MEDIAFILES_LOCATION = 'Media'
-STATICFILES_LOCATION = 'Static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'Frontend/Static/')
+]
+
+STATIC_URL = 'Frontend/Static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'Frontend/Static_Root')
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', "")
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', "")
@@ -148,8 +149,12 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', "")
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+if PRODUCTION == 'True':
+    MEDIAFILES_LOCATION = 'Media'
+    STATICFILES_LOCATION = 'Static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
