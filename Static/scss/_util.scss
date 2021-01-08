@@ -1,0 +1,199 @@
+
+@mixin display-flex{
+  display: flex;
+}
+
+@mixin row-flex{
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin column-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin justify-center{
+  justify-content: center;
+}
+
+@mixin justify-space-between{
+  justify-content: space-between;
+}
+
+@mixin align-center{
+  align-items: center;
+}
+
+@mixin flex-1{
+  flex: 1;
+}
+
+@mixin flex-2{
+  flex: 2;
+}
+
+@mixin flex-3{
+  flex: 3;
+}
+
+
+@mixin btn__split($colorLeft, $colorRight, $textColor) {
+  .btn {
+    position: relative;
+    letter-spacing: 0.25em;
+    margin: 9% auto;
+    padding: 0.5rem 2rem;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $textColor;
+    border: none;
+
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      transform: skewX(30deg);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: -2;
+    }
+
+    &::before {
+      background-color: $colorLeft;
+      top: -0.5rem;
+      left: 0;
+    }
+
+    &::after {
+      background-color: $colorRight;
+      top: 0.5rem;
+      left: 6.2rem;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        top: 0;
+        transform: skewx(0deg);
+      }
+
+      &::after {
+        left: 0;
+      }
+
+      &::before {
+        left: 5.7rem;
+      }
+
+    }
+
+    &:active, &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+
+
+@mixin large-screen{
+  @media screen and (max-width: 1920px){
+    @content
+  }
+}
+
+@mixin laptop{
+  @media screen and (max-width: 1200px){
+    @content
+  }
+}
+
+@mixin tablet{
+  @media screen and (max-width: 992px){
+    @content
+  }
+}
+
+@mixin small-tab{
+  @media screen and (max-width: 768px){
+    @content
+  }
+}
+
+@mixin large-phone{
+  @media screen and (max-width: 425px){
+    @content
+  }
+}
+
+@mixin mid-phone{
+  @media screen and (max-width: 375px){
+    @content
+  }
+}
+
+@mixin sml-phone{
+  @media screen and (max-width: 320px){
+    @content
+  }
+}
+
+.column-flex{
+  flex-direction: column;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.flex-1{
+  flex: 1;
+}
+.align-item-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.mobile-margin{
+  margin-top: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: grey;
+}
+
+.row {
+  @include row-flex;
+  @include small-tab {
+    @include column-flex;
+    @include justify-center;
+  }
+}
+.section-header {
+  text-align: center;
+  margin: 5% 0;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #151941;
+  }
+
+  p {
+    color: #212529;
+    font-size: 1rem;
+  }
+}

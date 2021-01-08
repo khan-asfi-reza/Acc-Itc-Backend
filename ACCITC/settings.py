@@ -32,7 +32,7 @@ DATABASE_PORT = os.environ.get("DATABASE_PORT", "POST")
 DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD", "PASSWORD")
 # SECURITY WARNING: don't run with debug turned on in production!
 PRODUCTION = os.environ.get('PRODUCTION', 'False')
-DEBUG = PRODUCTION == 'False'
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'ACCITC.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Frontend/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -132,17 +132,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'Frontend/Static/')
-# ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'Frontend/Static_Root')
-# STATIC_URL = 'Frontend/Static/'
 MEDIAFILES_LOCATION = 'Media'
 STATICFILES_LOCATION = 'Static'
 
-STATIC_URL = '/Static/'
+STATIC_URL = 'Static'
 STATIC_ROOT = os.path.join(BASE_DIR, 'Static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
 MEDIA_URL = f"/Media/"

@@ -1,0 +1,230 @@
+@import "../const";
+@import "../util";
+@import "../animations";
+nav {
+  height: 10vh;
+  background: $text-header-color;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .logo-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .logo-box {
+      height: 3rem;
+      width: 3rem;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 50%;
+
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .menu-container {
+    flex: 1;
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      height: 100%;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: auto;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+      }
+
+      li {
+        position: relative;
+        width: 7rem;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+        background-color: transparent;
+        z-index: 1;
+        overflow: hidden;
+
+        span {
+          position: absolute;
+          width: 25%;
+          height: 100%;
+          background-color: $theme-primary-color;
+          transform: translateY(150%);
+          border-radius: 50%;
+          left: calc((var(--n) - 1) * 25%);
+          transition: 0.5s;
+          transition-delay: calc((var(--n) - 2) * 0.1s);
+          z-index: -1;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          background-color: orangered;
+          height: 3px;
+          bottom: 0;
+          right: 50%;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          background-color: #50078b;
+          height: 3px;
+          bottom: 0;
+          left: 50%;
+        }
+
+        a {
+          color: $theme-primary-color;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          a {
+            color: #37C151;
+          }
+
+          span {
+            transform: translateY(0) scale(2);
+          }
+        }
+
+        span:nth-child(2) {
+          --n: 1;
+        }
+
+        span:nth-child(3) {
+          --n: 2;
+        }
+
+        span:nth-child(4) {
+          --n: 3;
+        }
+
+        span:nth-child(5) {
+          --n: 4;
+        }
+
+      }
+    }
+  }
+}
+
+@include small-tab{
+  nav {
+    .menu-container {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(110px at 100% -5%);
+        background-color: $theme-secondary-color;;
+        border: none;
+        outline: none;
+        z-index: 6000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: all 1s ease-in-out;
+
+        li {
+          opacity: 0;
+          transition: all 1s ease-in;
+          border: 2px solid $theme-primary-color;
+        }
+
+        li a {
+          color: $theme-primary-color;
+          font-size: 20px;
+          text-align: left;
+        }
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 35px;
+        position: fixed;
+        z-index: 7000;
+        top: 0;
+        right: 35px;
+        cursor: pointer;
+
+        .line {
+          background-color: $text-header-color;
+          width: 22px;
+          height: 2px;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          transition: all 0.5s ease-in;
+        }
+
+        .line:nth-child(1) {
+          top: 30%;
+        }
+
+        .line:nth-child(3) {
+          top: 70%;
+        }
+      }
+
+      .hamburger:hover .line {
+        margin-bottom: 5px;
+        transition: all .5s ease-in;
+      }
+
+      .hamburger.open {
+        .line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .line:nth-child(1), .line:nth-child(3) {
+          top: 50%;
+        }
+
+        .line:nth-child(1) {
+          transform: rotate(45deg);
+          transform-origin: 30% -13px;
+        }
+
+        .line:nth-child(3) {
+          transform: rotate(135deg);
+          transform-origin: 5px -2px;
+        }
+      }
+
+      .nav-links.open {
+        clip-path: circle(1000px at 100% -5%);
+        transition: all 1s ease-in-out;
+
+        li {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
